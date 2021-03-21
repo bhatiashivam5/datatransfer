@@ -1,0 +1,37 @@
+<mat-card>
+  <mat-toolbar>Login</mat-toolbar>
+  <br><br>
+
+  <form #userform="ngForm" (ngSubmit)="onlogin(userform)">
+    <mat-form-field>
+      <input
+      type="text"
+      name="username"
+      ngModel
+      matInput
+      placeholder="Username">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input
+      type="password"
+      name="password"
+      ngModel
+      matInput
+      placeholder="Password">
+    </mat-form-field>
+
+    <button type="submit" mat-raised-button color="primary">Submit</button>&nbsp;
+    <app-logout></app-logout>
+
+  </form>
+
+</mat-card>
+
+
+
+
+
+<!-- our navbar -->
+
+

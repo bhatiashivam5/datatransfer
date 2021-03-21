@@ -1,0 +1,25 @@
+.btn1{
+  position: absolute;
+  left: 150px;
+  top: 150px;
+  background-color:#4A0EE9;
+}
+
+.btn2{
+  position: absolute;
+  left: 650px;
+  top: 150px;
+}
+
+.btn3{
+  position: absolute;
+  left: 1150px;
+  top: 150px;
+}
+
+#para{
+  position: absolute;
+  left: 150px;
+  top: 300px;
+  background-color:lightblue;
+}

@@ -1,0 +1,13 @@
+<h1>My First Color Picker Program</h1>
+
+<h2>Pick a color</h2>
+<div>
+  <button  class="btn1" mat-button (click)="color='red'">Red</button>&nbsp;
+  <button  class="btn2" mat-button (click)="color='green'">Green</button>&nbsp;
+  <button  class="btn3" mat-button (click)="color='blue'">Blue</button>
+</div>
+<p class="para1" [appHighlight]="color">Highlight me!</p>
+
+<p class="para2"   [appHighlight]="color">
+  Highlight me too!
+</p>

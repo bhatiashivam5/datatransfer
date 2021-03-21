@@ -1,0 +1,144 @@
+<mat-card>
+    <mat-toolbar><h2>Sign Up</h2></mat-toolbar>
+    <br /><br />
+
+    <form
+      name="form"
+      #userform="ngForm"
+      (ngSubmit)="userform.form.valid && getValues(userform)"
+      noValidate>
+      <!-- username -->
+      <mat-form-field>
+        <input
+          type="text"
+          matInput
+          required
+          [(ngModel)]="model.username"
+          name="username"
+          #username="ngModel"
+          placeholder="Your Name"
+          ngModelname="username"
+          [ngClass]="{ 'is-invalid': userform.submitted && username.invalid }"
+          minlength="5"
+        />
+      </mat-form-field>
+      <br /><br />
+
+      <!-- mat error -->
+      <mat-error *ngIf="userform.submitted && username.invalid">
+        <mat-error *ngIf="username.errors?.required">
+          Name should be enter
+        </mat-error>
+
+        <mat-error *ngIf="username.errors?.minlength">
+          Name must be at least 5 characters long.
+        </mat-error>
+      </mat-error>
+      <br />
+
+      <!-- useremail -->
+      <mat-form-field>
+        <input
+          type="email"
+          matInput
+          placeholder="Your Email"
+          ngModel
+          name="useremail"
+          required
+          [(ngModel)]="model.useremail"
+          name="useremail"
+          #useremail="ngModel"
+          [ngClass]="{ 'is-invalid': userform.submitted && useremail.invalid }"
+          ngModelname="useremail"
+          minlength="5"
+        /><br><br>
+        <p>This site uses Gravatar so if you want a profile image, use a Gravatar email</p>
+      </mat-form-field>
+      <br /><br />
+      <mat-error *ngIf="userform.submitted && useremail.invalid">
+        <mat-error *ngIf="useremail.errors?.required">
+          Email should be enter
+        </mat-error>
+
+        <mat-error *ngIf="useremail.errors?.minlength">
+          Email must be at least 5 characters long.</mat-error
+        >
+      </mat-error>
+
+
+      <br />
+
+      <!-- password validation -->
+      <mat-form-field>
+        <input
+          type="text"
+          matInput
+          placeholder="password"
+          required
+          [(ngModel)]="model.password"
+          name="password"
+          #password="ngModel"
+          [ngClass]="{ 'is-invalid': userform.submitted && password.invalid }"
+          ngModelname="password"
+          minlength="5"
+        /> </mat-form-field
+      ><br /><br />
+
+      <mat-error *ngIf="userform.submitted && password.invalid">
+        <mat-error *ngIf="password.errors?.required">
+          Password should be enter
+        </mat-error>
+
+        <mat-error *ngIf="password.errors?.minlength">
+          Password must be at least 5 characters long.</mat-error
+        >
+      </mat-error>
+      <!-- password validation -->
+
+      <mat-form-field>
+        <input
+          type="text"
+          matInput
+          placeholder="Confirm Password"
+          ngModel
+          name="confirmpassword"
+          [(ngModel)]="model.confirmpassword"
+          name="confirmpassword"
+          #confirmpassword="ngModel"
+          [ngClass]="{
+            'is-invalid': userform.submitted && confirmpassword.invalid
+          }"
+          ngModelname="confirmpassword"
+          pattern="{{ password.value }}"
+          minlength="5"
+          required
+        />
+      </mat-form-field>
+      <br /><br />
+
+      <mat-error *ngIf="userform.submitted && confirmpassword.invalid">
+        <mat-error *ngIf="confirmpassword.errors?.required">
+          Confirm password should be enter
+        </mat-error>
+        <mat-error *ngIf="confirmpassword.errors?.pattern">
+          Password does not match confirm password
+        </mat-error>
+      </mat-error>
+
+
+      <!-- button  -->
+
+      <button
+        type="submit"
+        mat-raised-button
+        color="primary"
+
+      >
+        Submit</button
+      >&nbsp;&nbsp;
+      <button type="submit" mat-raised-button color="primary">Clear</button>
+      <br /><br />
+    </form>
+    <br /><br />
+  </mat-card>
+
